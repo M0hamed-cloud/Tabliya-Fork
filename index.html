@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طَبْلِيّة وشَوْكَة | Tabliya & Fork - مطعم إيطالي بنكهة مصرية أصيلة</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Amiri & Cairo for Arabic, Playfair Display & Cormorant Garamond for English & Accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#121110',        /* Deep slate charcoal background */
+                            card: '#1A1816',      /* Muted graphite dark card */
+                            border: '#2E2B27',    /* Subtle dark border */
+                            terracotta: '#D95428',/* Signature Egyptian Terracotta */
+                            terracottaHover: '#B84119',
+                            gold: '#E5A93B',      /* Toasted golden yellow */
+                            cream: '#F4EFEA',     /* Warm ivory text */
+                            creamMuted: '#BDB3A7',/* Soft warm muted text */
+                            charcoal: '#0A0A09'
+                        }
+                    },
+                    fontFamily: {
+                        arabicHeading: ['Amiri', 'serif'],
+                        arabicBody: ['Cairo', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Craftsmanship Styling */
+        body {
+            background-color: #121110;
+            color: #F4EFEA;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Amiri', serif;
+        }
+
+        .hero-grain {
+            background-color: #121110;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(217, 84, 40, 0.08) 0%, rgba(18, 17, 16, 0.95) 80%),
+                url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        /* Handcrafted chalk effect for fork & knife outlines */
+        .utensil-chalk {
+            filter: drop-shadow(0px 0px 3px rgba(244, 239, 234, 0.25));
+        }
+
+        /* Smooth Tab Animations */
+        .menu-tab-active {
+            background-color: #D95428;
+            color: #FFFFFF;
+            border-color: #D95428;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121110;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2E2B27;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D95428;
+        }
+
+        .bg-pattern-dots {
+            background-image: radial-gradient(rgba(229, 169, 59, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-cream antialiased selection:bg-brand-terracotta selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-terracotta text-white text-xs md:text-sm py-2 px-4 text-center font-medium tracking-wide flex justify-center items-center gap-2 shadow-inner">
+        <span class="inline-block w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        <span>أهلاً بكم في "طَبْلِيّة وشَوْكَة" - أول طبلية إيطالية بقلب القاهرة | احجز طاولتك لعطلة نهاية الأسبوع الآن</span>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header id="navbar" class="sticky top-0 z-40 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full border border-brand-gold/40 bg-brand-card flex items-center justify-center text-brand-gold group-hover:border-brand-terracotta transition-colors shadow-sm">
+                        <i class="fa-solid fa-utensils text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="heading-font text-2xl md:text-3xl font-bold text-brand-cream tracking-wide group-hover:text-brand-terracotta transition-colors">
+                            طَبْلِيّة وشَوْكَة
+                        </span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-gold font-serif -mt-1">Tabliya & Fork</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#home" class="text-brand-terracotta hover:text-brand-gold transition-colors">الرئيسية</a>
+                    <a href="#story" class="text-brand-creamMuted hover:text-brand-cream transition-colors">حكايتنا</a>
+                    <a href="#menu" class="text-brand-creamMuted hover:text-brand-cream transition-colors">قائمة الطعام</a>
+                    <a href="#testimonials" class="text-brand-creamMuted hover:text-brand-cream transition-colors">قالوا عنّا</a>
+                    <a href="#location" class="text-brand-creamMuted hover:text-brand-cream transition-colors">موقعنا</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openModal()" class="bg-brand-terracotta hover:bg-brand-terracottaHover text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-terracotta/20 hover:shadow-brand-terracotta/40 transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-calendar-check ml-2"></i> احجز طاولتك
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-cream p-2 focus:outline-none" aria-label="القائمة">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 pt-3 pb-6 space-y-4 text-right">
+            <a href="#home" onclick="closeMobileMenu()" class="block text-brand-terracotta font-semibold py-1">الرئيسية</a>
+            <a href="#story" onclick="closeMobileMenu()" class="block text-brand-creamMuted font-medium py-1">حكايتنا</a>
+            <a href="#menu" onclick="closeMobileMenu()" class="block text-brand-creamMuted font-medium py-1">قائمة الطعام</a>
+            <a href="#testimonials" onclick="closeMobileMenu()" class="block text-brand-creamMuted font-medium py-1">قالوا عنّا</a>
+            <a href="#location" onclick="closeMobileMenu()" class="block text-brand-creamMuted font-medium py-1">موقعنا</a>
+            <button onclick="openModal(); closeMobileMenu();" class="w-full mt-2 bg-brand-terracotta text-white py-3 rounded-full font-semibold shadow-md">
+                احجز طاولتك الآن
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Authentic Dark Hand-Drawn Vibe) -->
+    <section id="home" class="relative min-h-[90vh] hero-grain flex items-center justify-center py-16 px-4 overflow-hidden border-b border-brand-border">
+        
+        <!-- Decorative Ambient Overlays -->
+        <div class="absolute inset-0 pointer-events-none opacity-30">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" class="absolute -top-12 -left-12 w-80 h-80 rounded-full filter blur-sm opacity-40" alt="Pizza">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" class="absolute -bottom-16 -right-12 w-96 h-96 rounded-full filter blur-md opacity-30" alt="Pasta">
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center">
+            
+            <!-- Flanking Hand-drawn Utensil SVG Line Art Frame -->
+            <div class="flex items-center justify-center gap-4 md:gap-12">
+                
+                <!-- Chalk Fork (Right Side in RTL) -->
+                <div class="hidden sm:block text-brand-creamMuted opacity-50 hover:opacity-80 transition-opacity utensil-chalk">
+                    <svg class="w-10 h-36 md:w-14 md:h-48 stroke-current fill-none stroke-[1.3]" viewBox="0 0 50 160">
+                        <path d="M 25 160 L 25 70 M 12 10 L 12 45 C 12 60, 38 60, 38 45 L 38 10 M 20 10 L 20 42 M 30 10 L 30 42" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <!-- Central Branding Content -->
+                <div class="flex flex-col items-center">
+                    
+                    <!-- Decorative Vintage Swirl -->
+                    <div class="mb-4 text-brand-gold opacity-90">
+                        <svg class="w-32 md:w-44 h-8 fill-current mx-auto" viewBox="0 0 200 40">
+                            <path d="M 10 20 Q 50 5, 100 20 Q 150 35, 190 20 M 100 10 C 90 0, 110 0, 100 10 Z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Badge Tag -->
+                    <span class="inline-block px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-card/80 text-brand-gold text-xs font-medium tracking-widest mb-4">
+                        تراتوريا إيطالية بأيدي ومكونات مصرية
+                    </span>
+
+                    <!-- Main Title -->
+                    <h1 class="heading-font text-5xl sm:text-7xl md:text-8xl font-bold text-brand-cream tracking-tight mb-4 drop-shadow-md">
+                        طَبْلِيّة وشَوْكَة
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="font-serif text-lg sm:text-2xl text-brand-gold italic tracking-wide mb-6">
+                        Tabliya & Fork — Italian Passion, Egyptian Soul
+                    </p>
+
+                    <!-- Divider & Concept Statement -->
+                    <div class="flex items-center justify-center w-full max-w-lg my-4">
+                        <div class="h-px bg-gradient-to-l from-transparent via-brand-creamMuted/40 to-transparent flex-grow"></div>
+                        <span class="px-4 text-xs sm:text-sm text-brand-creamMuted tracking-wider font-light">
+                            البيتزا بالحطب • الباستا الطازجة • دفء الطبلية
+                        </span>
+                        <div class="h-px bg-gradient-to-r from-transparent via-brand-creamMuted/40 to-transparent flex-grow"></div>
+                    </div>
+
+                    <p class="max-w-2xl text-brand-creamMuted text-sm sm:text-base leading-relaxed mb-8">
+                        حيث يلتقي خُبز الفُرن البلدي وشغف البيتزا النيوبوليتانية، لِنقدم لك تجربة طعام استثنائية تجمع بين الفخامة والبساطة.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-brand-terracotta hover:bg-brand-terracottaHover text-white text-base font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-brand-terracotta/25 transition-all transform hover:scale-105">
+                            <i class="fa-solid fa-utensils ml-2"></i> احجز طاولتك الآن
+                        </button>
+                        <a href="#menu" class="w-full sm:w-auto border border-brand-border bg-brand-card/70 hover:bg-brand-card text-brand-cream text-base font-medium px-8 py-3.5 rounded-full transition-all text-center">
+                            استكشف القائمة
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Chalk Knife (Left Side in RTL) -->
+                <div class="hidden sm:block text-brand-creamMuted opacity-50 hover:opacity-80 transition-opacity utensil-chalk">
+                    <svg class="w-10 h-36 md:w-14 md:h-48 stroke-current fill-none stroke-[1.3]" viewBox="0 0 50 160">
+                        <path d="M 25 160 L 25 65 C 25 65, 38 50, 38 10 C 20 10, 20 50, 25 65 Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR STORY SECTION ("حكايتنا") -->
+    <section id="story" class="py-20 md:py-28 bg-brand-bg relative bg-pattern-dots border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Story Visual Composition -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=600&q=80" alt="بيتزا فرن الحطب" class="rounded-2xl border border-brand-border shadow-2xl object-cover h-64 w-full transform hover:scale-102 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" alt="إعداد العجين يدوي" class="rounded-2xl border border-brand-border shadow-2xl object-cover h-64 w-full mt-8 transform hover:scale-102 transition-transform">
+                    </div>
+                    <!-- Badge overlapping -->
+                    <div class="absolute -bottom-6 right-1/2 transform translate-x-1/2 bg-brand-card border border-brand-gold/40 p-4 rounded-xl shadow-xl text-center max-w-xs w-full backdrop-blur-md">
+                        <span class="heading-font text-brand-gold font-bold text-lg block">عجينة مخمرة لـ 48 ساعة</span>
+                        <span class="text-xs text-brand-creamMuted">مكونات إيطالية طازجة مع زيت زيتون سيناء الأصيل</span>
+                    </div>
+                </div>
+
+                <!-- Story Narrative Text -->
+                <div>
+                    <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest block mb-2">سر الصنعة والدفء</span>
+                    <h2 class="heading-font text-4xl sm:text-5xl font-bold text-brand-cream mb-6 leading-tight">
+                        كيف التقت الطبلية المصرية بالشوكة الإيطالية؟
+                    </h2>
+                    <p class="text-brand-creamMuted text-base leading-relaxed mb-4">
+                        بدأت الفكرة من إيماننا بأن الطعام ليس مجرد وجبة، بل هو طقس دافئ يجمع العائلة والأصدقاء. في **"طَبْلِيّة وشَوْكَة"**، أخذنا سر الباستا المصنوعة يدوياً بحب على طريقة الجدات الإيطاليات، ودمجناها مع كرم الضيافة المصرية الأصيلة ودفء الطبلية.
+                    </p>
+                    <p class="text-brand-creamMuted text-base leading-relaxed mb-8">
+                        نستخدم أفران الحطب الحجرية المشتعلة بأخشاب الزيتون، ونختار طماطم سان مارزانو، مع الأجبان الطازجة، لتقديم أطباق تحمل روح إيطاليا وكرم مصر في كل قَطمة.
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="grid grid-cols-3 gap-4 border-t border-brand-border pt-6">
+                        <div class="text-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                            <i class="fa-solid fa-wheat-awn text-brand-gold text-xl mb-1"></i>
+                            <h4 class="text-xs font-bold text-brand-cream">دقيق إيطالي 00</h4>
+                        </div>
+                        <div class="text-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                            <i class="fa-solid fa-fire text-brand-terracotta text-xl mb-1"></i>
+                            <h4 class="text-xs font-bold text-brand-cream">فرن بلدي حطبي</h4>
+                        </div>
+                        <div class="text-center p-3 rounded-lg bg-brand-card border border-brand-border">
+                            <i class="fa-solid fa-heart text-brand-gold text-xl mb-1"></i>
+                            <h4 class="text-xs font-bold text-brand-cream">شغف ونظافة</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION ("قائمة الطعام") -->
+    <section id="menu" class="py-20 bg-brand-card relative border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-gold text-xs font-bold tracking-widest uppercase block mb-2">تذوّق التميّز</span>
+                <h2 class="heading-font text-4xl sm:text-5xl font-bold text-brand-cream mb-4">قائمة طَعامنا المُعَدّة بحُب</h2>
+                <p class="text-brand-creamMuted text-sm sm:text-base">اختر مقبلاتك، بيتزا الفرن، أو باستا اليوم المصنوعة طازجة صباح كل يوم</p>
+            </div>
+
+            <!-- Menu Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterMenu('pizza')" id="tab-pizza" class="menu-tab-btn menu-tab-active px-6 py-2.5 rounded-full text-sm font-semibold border border-brand-border transition-all">
+                    🍕 بيتزا الفرن الحجري
+                </button>
+                <button onclick="filterMenu('pasta')" id="tab-pasta" class="menu-tab-btn text-brand-creamMuted hover:text-brand-cream px-6 py-2.5 rounded-full text-sm font-semibold border border-brand-border transition-all">
+                    🍝 الباستا الطازجة
+                </button>
+                <button onclick="filterMenu('starters')" id="tab-starters" class="menu-tab-btn text-brand-creamMuted hover:text-brand-cream px-6 py-2.5 rounded-full text-sm font-semibold border border-brand-border transition-all">
+                    🥗 المقبلات والسلاطات
+                </button>
+                <button onclick="filterMenu('desserts')" id="tab-desserts" class="menu-tab-btn text-brand-creamMuted hover:text-brand-cream px-6 py-2.5 rounded-full text-sm font-semibold border border-brand-border transition-all">
+                    ☕ الحلو والمشروبات
+                </button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- PIZZA ITEM 1 -->
+                <div class="menu-item pizza bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=400&q=80" alt="مارجريتا نابوليتانا" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">مارجريتا نابوليتانا الأصيلة</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">240 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">صلصة طماطم سان مارزانو، جبن موتزاريلا دي بوفالا طازجة، حبق/ريحان فريش، وزيت زيتون بكر ممتاز.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-gold/10 text-brand-gold text-[11px] font-medium">الأكثر طلباً ⭐</span>
+                            <button onclick="openModal('مارجريتا نابوليتانا')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIZZA ITEM 2 -->
+                <div class="menu-item pizza bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=80" alt="بيتزا ترافل و أجبان" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">بيتزا الترافل والأجبان الأربعة</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">360 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">مزيج فورينا، جودا، جورجونزولا، موتزاريلا مع زيت الكمأة البيضاء والمشروم المحمص.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-card border border-brand-border text-brand-creamMuted text-[11px]">توقيع الشيف 👨‍🍳</span>
+                            <button onclick="openModal('بيتزا الترافل')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIZZA ITEM 3 -->
+                <div class="menu-item pizza bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=400&q=80" alt="بيبروني حار" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">بيبروني الفرن مع الفلفل المشوي</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">290 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">شرائح السلامي الإيطالي البقري الحار، موتزاريلا، عسل محروق ولسمك بلسميك مدخن.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-red-950/40 text-red-400 text-[11px]">سبايسي خفيف 🌶️</span>
+                            <button onclick="openModal('بيتزا بيبروني')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASTA ITEM 1 -->
+                <div class="menu-item pasta hidden bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281273?auto=format&fit=crop&w=400&q=80" alt="باستا تالياتيلي بولونيز" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">تالياتيلي بولونيز الطازجة</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">280 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">شرائح الباستا المصنوعة اليوم، مطبوخة بطبقات اللحم البقري المطهو ببطء 6 ساعات مع بارميزان ريجانو.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-gold/10 text-brand-gold text-[11px]">باستا طازجة يومياً 🍝</span>
+                            <button onclick="openModal('تالياتيلي بولونيز')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASTA ITEM 2 -->
+                <div class="menu-item pasta hidden bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=400&q=80" alt="فيتوتشيني ألفريدو دجاج" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">فيتوتشيني ألفريدو بالدجاج والمشروم</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">270 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">كريمة لباني طازجة، مشروم بني طازج، قطع صدور دجاج مشوية على الخشب، مع ثوم وأعشاب إيطالية.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-card border border-brand-border text-brand-creamMuted text-[11px]">قوام كريمي غني ✨</span>
+                            <button onclick="openModal('فيتوتشيني ألفريدو')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STARTER ITEM 1 -->
+                <div class="menu-item starters hidden bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=400&q=80" alt="بروسكيتا طماطم" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">بروسكيتا الطماطم والريحان</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">150 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">خبز محمص في الفرن البلدي، مع مكعبات الطماطم المتبلة بزيت الزيتون، الثوم الفريش والريحان.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-card border border-brand-border text-brand-creamMuted text-[11px]">مقبلات مشهية 🍃</span>
+                            <button onclick="openModal('بروسكيتا الطماطم')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESSERT ITEM 1 -->
+                <div class="menu-item desserts hidden bg-brand-bg border border-brand-border p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-brand-gold/50 transition-all group">
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=400&q=80" alt="تيراميسو إيطالي" class="w-full sm:w-32 h-32 object-cover rounded-xl group-hover:scale-105 transition-transform">
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="heading-font text-xl font-bold text-brand-cream group-hover:text-brand-gold transition-colors">تيراميسو إيطالي بالقهوة المعتقة</h3>
+                                <span class="text-brand-terracotta font-bold text-lg">180 ج.م</span>
+                            </div>
+                            <p class="text-brand-creamMuted text-xs leading-relaxed mb-3">طبقات البسكويت المشبع بإسبريسو غامق، كريمة ماسكاربوني غنية، ورشة كاكاو خام فاخر.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-brand-gold/10 text-brand-gold text-[11px]">ختامها مسك ☕</span>
+                            <button onclick="openModal('تيراميسو')" class="text-xs text-brand-creamMuted hover:text-brand-terracotta font-semibold">اطلب في الطاولة <i class="fa-solid fa-arrow-left mr-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION ("قالوا عنّا") -->
+    <section id="testimonials" class="py-20 bg-brand-bg border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-brand-gold text-xs font-bold tracking-widest uppercase block mb-2">انطباعات ضيوفنا</span>
+                <h2 class="heading-font text-4xl font-bold text-brand-cream">دفء الجلسة ورأي الأحبة</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative shadow-md">
+                    <div class="flex items-center gap-1 text-brand-gold mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-creamMuted text-sm leading-relaxed mb-6 font-light">"البيتزا هنا عالمية حقيقي، عجينة نابولي المخمرة صح مع طعم الفرن البلدي.. التجربة كلها من أول الاستقبال لحد التيراميسو فوق الممتازة."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-terracotta/20 border border-brand-terracotta text-brand-terracotta flex items-center justify-center font-bold text-sm">مـ</div>
+                        <div>
+                            <h4 class="text-brand-cream font-bold text-sm">مهندس/ محمد الشافعي</h4>
+                            <span class="text-brand-creamMuted text-[11px]">ناقد طعام وتصوير</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative shadow-md">
+                    <div class="flex items-center gap-1 text-brand-gold mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-creamMuted text-sm leading-relaxed mb-6 font-light">"فكرة دمج دفء الطبلية المصرية مع الأكل الإيطالي عبقرية. الباستا الفريش التالياتيلي خطيرة والأجواء هادية وراقية جداً."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold flex items-center justify-center font-bold text-sm">نـ</div>
+                        <div>
+                            <h4 class="text-brand-cream font-bold text-sm">نوران صبري</h4>
+                            <span class="text-brand-creamMuted text-[11px]">زائرة دائمة - المعادي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative shadow-md">
+                    <div class="flex items-center gap-1 text-brand-gold mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-creamMuted text-sm leading-relaxed mb-6 font-light">"خدمة ضيافة مش موجودة في أي مكان تاني. الستاف بشوش جداً والبيتزا بتنزل سخنة بتدخن من الفرن قدامك مباشرة."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-creamMuted/20 border border-brand-creamMuted text-brand-cream flex items-center justify-center font-bold text-sm">أ</div>
+                        <div>
+                            <h4 class="text-brand-cream font-bold text-sm">أحمد هشام</h4>
+                            <span class="text-brand-creamMuted text-[11px]">زيارة عائلية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & HOURS SECTION ("زوّرنا") -->
+    <section id="location" class="py-20 bg-brand-card border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info Cards -->
+                <div>
+                    <span class="text-brand-gold text-xs font-bold tracking-widest uppercase block mb-2">أهلاً بكم في بيتنا</span>
+                    <h2 class="heading-font text-4xl font-bold text-brand-cream mb-6">الموقع ومواعيد العمل</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-bg border border-brand-border">
+                            <div class="w-12 h-12 rounded-lg bg-brand-terracotta/10 border border-brand-terracotta/30 flex items-center justify-center text-brand-terracotta text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-cream text-base">العنوان</h4>
+                                <p class="text-brand-creamMuted text-sm mt-1">شارع 9 - المعادي، بالقرب من المحطة، القاهرة - مصر</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-bg border border-brand-border">
+                            <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl flex-shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-cream text-base">ساعات العمل</h4>
+                                <p class="text-brand-creamMuted text-sm mt-1">يومياً من الساعة 1:00 ظهراً وحتى 1:00 صباحاً</p>
+                                <span class="text-xs text-brand-gold block mt-0.5">* خدمة حجز الطاولات متاحة طوال اليوم</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-bg border border-brand-border">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-cream text-base">التواصل السريع والواتساب</h4>
+                                <p class="text-brand-creamMuted text-sm mt-1" dir="ltr">+20 102 345 6789</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Map Container -->
+                <div class="h-80 md:h-96 rounded-2xl border border-brand-border bg-brand-bg overflow-hidden relative flex items-center justify-center shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="خريطة الموقع" class="w-full h-full object-cover opacity-40 filter grayscale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg"></div>
+                    <div class="relative z-10 text-center p-6 bg-brand-card/90 backdrop-blur-md rounded-2xl border border-brand-gold/30 max-w-sm">
+                        <i class="fa-solid fa-map-pin text-brand-terracotta text-3xl mb-2 animate-bounce"></i>
+                        <h3 class="heading-font text-xl font-bold text-brand-cream mb-1">فرع المعادي الرئيسي</h3>
+                        <p class="text-xs text-brand-creamMuted mb-4">في قلب المعادي الهادئة مع جلسات خارجية مميزة</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-brand-terracotta text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-terracottaHover transition-colors">
+                            فتح في خرائط جوجل <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-bg py-12 text-center border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center mb-8">
+                <span class="heading-font text-3xl font-bold text-brand-cream mb-2">طَبْلِيّة وشَوْكَة</span>
+                <p class="text-xs text-brand-gold font-serif tracking-widest uppercase">Tabliya & Fork Trattoria</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center items-center gap-6 text-xl text-brand-creamMuted mb-8">
+                <a href="#" class="hover:text-brand-terracotta transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-terracotta transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-terracotta transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-brand-terracotta transition-colors"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <p class="text-xs text-brand-creamMuted font-light">
+                جميع الحقوق محفوظة © <span id="year"></span> لمطعم طَبْلِيّة وشَوْكَة. صُنع بكل شغف وحُب في مصر 🇪🇬.
+            </p>
+        </div>
+    </footer>
+
+    <!-- RESERVATION MODAL -->
+    <div id="reservation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity">
+        <div class="bg-brand-card border border-brand-border w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl transform transition-all">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-5 left-5 text-brand-creamMuted hover:text-brand-cream text-xl p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-brand-terracotta/10 text-brand-terracotta border border-brand-terracotta/30 flex items-center justify-center mx-auto mb-3 text-xl">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </div>
+                <h3 class="heading-font text-2xl font-bold text-brand-cream">احجز طاولتك في طَبْلِيّة وشَوْكَة</h3>
+                <p class="text-xs text-brand-creamMuted mt-1" id="modal-subtitle">يسعدنا استقبالكم وقضاء أجمل الأوقات معنا</p>
+            </div>
+
+            <!-- Form -->
+            <form id="booking-form" onsubmit="handleBooking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-creamMuted mb-1">الاسم بالكامل</label>
+                    <input type="text" required placeholder="مثال: أحمد محمود" class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-creamMuted mb-1">رقم الهاتف / الواتساب</label>
+                        <input type="tel" required placeholder="010xxxxxxxx" class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-creamMuted mb-1">عدد الضيوف</label>
+                        <select class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors">
+                            <option>شخصين (2)</option>
+                            <option>3 - 4 أشخاص</option>
+                            <option>5 - 6 أشخاص</option>
+                            <option>طاولة عائلية كبيرة (8+)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-creamMuted mb-1">التاريخ</label>
+                        <input type="date" required class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-creamMuted mb-1">الموعد المفضّل</label>
+                        <select class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors">
+                            <option>02:00 ظهراً</option>
+                            <option>05:00 مساءً</option>
+                            <option>08:00 مساءً (ذروة)</option>
+                            <option>10:30 مساءً</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-brand-creamMuted mb-1">ملاحظات خاصة (اختياري)</label>
+                    <textarea rows="2" placeholder="ذكرى سنوية، احتفال، تفضيل جلسة خروج أو داخلية..." class="w-full bg-brand-bg border border-brand-border rounded-xl px-4 py-2.5 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-terracotta hover:bg-brand-terracottaHover text-white py-3 rounded-xl font-bold text-sm shadow-lg transition-all mt-2">
+                    تأكيد طلب الحجز
+                </button>
+            </form>
+
+            <!-- Success Alert State -->
+            <div id="booking-success" class="hidden text-center py-8">
+                <div class="w-16 h-16 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="heading-font text-2xl font-bold text-brand-cream mb-2">تم تسليم طلب الحجز بنجاح!</h4>
+                <p class="text-xs text-brand-creamMuted max-w-xs mx-auto mb-6">سيقوم فريق الضيافة بالتواصل معكم عبر الواتساب أو الهاتف خلال دقائق لتأكيد الطاولة.</p>
+                <button onclick="closeModal()" class="bg-brand-card border border-brand-border text-brand-cream hover:bg-brand-bg px-6 py-2 rounded-full text-xs font-semibold">
+                    إغلاق النافذة
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Menu Filtering Logic
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const tabs = document.querySelectorAll('.menu-tab-btn');
+
+            // Reset tab button states
+            tabs.forEach(tab => {
+                tab.classList.remove('menu-tab-active', 'bg-brand-terracotta', 'text-white');
+                tab.classList.add('text-brand-creamMuted');
+            });
+
+            // Activate current clicked tab button
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.classList.add('menu-tab-active', 'bg-brand-terracotta', 'text-white');
+                activeTab.classList.remove('text-brand-creamMuted');
+            }
+
+            // Show/Hide category items
+            items.forEach(item => {
+                if (item.classList.contains(category)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Reservation Modal Open/Close Controls
+        function openModal(dishName = '') {
+            const modal = document.getElementById('reservation-modal');
+            const subtitle = document.getElementById('modal-subtitle');
+            
+            if (dishName) {
+                subtitle.textContent = `طلب خاص: طلب طبق (${dishName}) على الطاولة عند الوصول`;
+            } else {
+                subtitle.textContent = `يسعدنا استقبالكم وقضاء أجمل الأوقات معنا`;
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('reservation-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+
+            // Reset booking state after delay
+            setTimeout(() => {
+                document.getElementById('booking-form').classList.remove('hidden');
+                document.getElementById('booking-success').classList.add('hidden');
+            }, 300);
+        }
+
+        // Handle Form Submission Mock
+        function handleBooking(e) {
+            e.preventDefault();
+            document.getElementById('booking-form').classList.add('hidden');
+            document.getElementById('booking-success').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
